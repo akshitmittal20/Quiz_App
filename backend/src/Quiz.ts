@@ -75,7 +75,7 @@ export class Quiz {
         this.currentState="question"
         problem.startTime = new Date().getTime();
         problem.submissions = [];
-        IoManager.getIo().emit("CHANGE_PROBLEM", {
+        IoManager.getIo().to(this.roomId).emit("problem", {
             problem
         })
         //to do : clea this is function moves ahead
@@ -101,6 +101,7 @@ export class Quiz {
             this.setActiveProblem(problem);
         }
         else {
+            this.activeProblem--;
             //send final results here
             // IoManager.getIo().emit("QUIZ_END", {
             //     problem
@@ -148,7 +149,7 @@ export class Quiz {
     }
 
     getLeaderBoard() {
-        return this.users.sort((a, b) => a.points < b.points ? 1 : -1).splice(0,20);
+        return this.users.sort((a, b) => a.points < b.points ? 1 : -1).slice(0,20);
     }
 
     getCurrentState(){
