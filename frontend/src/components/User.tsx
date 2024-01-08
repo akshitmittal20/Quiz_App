@@ -13,10 +13,10 @@ export const User = () => {
             <div className="bg-gray-100 flex items-center justify-center h-screen">
                 <div className="text-center">
                 <div className="mb-8">
-                    <h1 className="text-2xl font-semibold mb-2 text-slate-600">
+                    <h1 className="text-2xl font-semibold mb-2">
                         Enter the code to join
                     </h1>
-                    <p className="text-gray-600">It’s on the screen in front of you</p>
+                    <p className="text-gray-600">Its on the screen in front of you</p>
                 </div>
                 <div className="mb-8">
                     <input
@@ -66,7 +66,7 @@ export const UserLoggedin = ({name, code}) => {
     const [userId, setUserId] = useState("");
 
     useEffect(() => {
-        const socket = io("https://sum-server.100xdevs.com");
+        const socket = io("https://localhost:3000");
         setSocket(socket)
 
         socket.on("connect", () => {

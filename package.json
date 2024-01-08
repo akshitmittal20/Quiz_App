@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/hkirat/quiz-app-next/issues"
   },
-  "homepage": "https://github.com/hkirat/quiz-app-next#readme"
+  "homepage": "https://github.com/hkirat/quiz-app-next#readme",
+  "dependencies": {
+    "@types/react": "^18.2.47",
+    "@types/socket.io-client": "^3.0.0",
+    "react": "^18.2.0",
+    "socket.io-client": "^4.7.3"
+  }
 }
